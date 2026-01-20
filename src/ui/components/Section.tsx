@@ -20,6 +20,10 @@ export default function Section({ title, subtitle, children }: Props) {
   );
 }
 
+<Section title="title">
+  <Text>HELO</Text>
+</Section>;
+
 const styles = StyleSheet.create({
   section: {
     gap: 10,

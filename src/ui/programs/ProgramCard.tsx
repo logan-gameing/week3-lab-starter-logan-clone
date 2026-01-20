@@ -1,17 +1,51 @@
+import { Program } from "@/src/types/program";
 import { StyleSheet } from "react-native";
 
 // TODO: Make a Props type for the props of our ProgramCard component
 
-export default function ProgramCard(/*TODO: Add props here (use desctructuring)*/) {
+type Props = { program: Program };
+
+export default function ProgramCard({ program }: Props) {
   // TODO: Use descructuring to extract values from the program
   // If values need to be modified or altered for display (ex: a default value added if no delivery method is specified),
   // you can do that directly in the tsx code below, or create new variables here
   // if the values will be used in the log function as well, create variables for them here
 
+  const {
+    id,
+    name,
+    credential,
+    school,
+    years,
+    credits,
+    delivery,
+    careerpath,
+    note,
+  } = program;
+
   // TODO: Create a function called logProgramInfo that logs a formatted summary of the program to the console
   // Example output:
   // Program: Diploma in Software Development | Credential: Diploma | School: School of Technology | Length: 2 years | Credits: 60 | Delivery: In-person
   // Career Paths: Software Developer, Web Developer, Mobile Application Developer
+
+  function logProgramInfo() {
+    console.log(
+      "Program: ",
+      program.name,
+      " | Credential: ",
+      program.credential,
+      " | School: ",
+      program.school,
+      " | Length: ",
+      program.years,
+      " years | Credits: ",
+      program.credits,
+      " | Delivery: ",
+      program.delivery,
+      " /n Career Paths: ",
+      program.careerpath,
+    );
+  }
 
   // TODO: Create the TSX for the program card layout
   // There should be a Pressable as the root element, with onPress set to the logProgramInfo function created above
