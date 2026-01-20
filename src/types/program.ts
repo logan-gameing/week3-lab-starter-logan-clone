@@ -23,9 +23,9 @@ export interface Program {
   name: string;
   credential: Credential;
   school: School;
-  years: number;
+  years: string;
   credits: number;
   delivery?: Delivery;
-  careerpath?: Array<1>;
+  careerpath?: 1[];
   note?: string;
 }

@@ -1,5 +1,5 @@
 import { Program } from "@/src/types/program";
-import { StyleSheet } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 // TODO: Make a Props type for the props of our ProgramCard component
 
@@ -28,7 +28,7 @@ export default function ProgramCard({ program }: Props) {
   // Program: Diploma in Software Development | Credential: Diploma | School: School of Technology | Length: 2 years | Credits: 60 | Delivery: In-person
   // Career Paths: Software Developer, Web Developer, Mobile Application Developer
 
-  function logProgramInfo() {
+  function LogProgramInfo() {
     console.log(
       "Program: ",
       program.name,
@@ -38,7 +38,7 @@ export default function ProgramCard({ program }: Props) {
       program.school,
       " | Length: ",
       program.years,
-      " years | Credits: ",
+      " | Credits: ",
       program.credits,
       " | Delivery: ",
       program.delivery,
@@ -59,7 +59,23 @@ export default function ProgramCard({ program }: Props) {
   // A View containing Text elements for each career path (if any exist) (use lines style for the view, and line style for each text)
   // If there is a note, a Text for the note
 
-  return null;
+  return (
+    <Pressable onPress={LogProgramInfo}>
+      <View style={styles.topRow}>
+        <Text style={styles.name}>{program.name}</Text>
+        <Text style={styles.badge}>{program.credential}</Text>
+        <View style={styles.meta}>
+          <Text>{program.school}</Text>
+          <Text>
+            Length: {program.years}| Credits: {program.credits}| Delivery?:
+            {program.delivery}
+          </Text>
+        </View>
+        <Text>{program.delivery} </Text>
+        <Text style={styles.note}>Note: {program.note} </Text>
+      </View>
+    </Pressable>
+  );
 }
 
 const styles = StyleSheet.create({

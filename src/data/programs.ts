@@ -6,7 +6,7 @@ export const programs: Program[] = [
     name: "Data Development",
     credential: "Diploma",
     school: "School for Advanced Digital Technology",
-    years: 1,
+    years: "1 year",
     credits: 2,
   },
   {
@@ -14,7 +14,7 @@ export const programs: Program[] = [
     name: "Data Development 2",
     credential: "Diploma",
     school: "School for Advanced Digital Technology",
-    years: 1,
+    years: "1 year",
     credits: 2,
   },
   {
@@ -22,7 +22,7 @@ export const programs: Program[] = [
     name: "Java Programming 1-3",
     credential: "Diploma",
     school: "School for Advanced Digital Technology",
-    years: 3,
+    years: "3 years",
     credits: 5,
   },
   {
@@ -30,7 +30,7 @@ export const programs: Program[] = [
     name: "Energy Use in the Workplace",
     credential: "Certificate",
     school: "MacPhail School of Energy",
-    years: 3,
+    years: "3 years",
     credits: 5,
   },
   {
@@ -38,7 +38,8 @@ export const programs: Program[] = [
     name: "Touring 1",
     credential: "Degree",
     school: "School of Hospitality and Tourism",
-    years: 1,
+    years: "1 year",
     credits: 3,
+    note: "Designed for touring and stuff",
   },
 ];
