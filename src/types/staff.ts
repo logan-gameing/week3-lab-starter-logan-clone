@@ -1,6 +1,15 @@
 // TODO: Create a type for staff ids, which should be strings
 
+export type StaffIds = "0" | "1" | "2" | "3" | "4" | "5";
+
 // TODO: Create a type for staff roles, which can be "Instructor", "Program Chair", "Coordinator", or "Advisor"
+
+export type StaffRoles =
+  | "Instructor"
+  | "Program Chair"
+  | "Coordinator"
+  | "Advisor"
+  | "IT";
 
 // TODO: Create an interface for staff members
 // The interface should include the following properties:
@@ -13,6 +22,8 @@
 // an optional start year
 // an array of specialties
 // an optional fun fact
+
+e;
 
 // once all group members have completed their sections, add the following field:
 // an optional array of course ids that this staff member teaches
