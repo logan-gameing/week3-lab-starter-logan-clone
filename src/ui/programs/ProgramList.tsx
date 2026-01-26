@@ -1,8 +1,14 @@
-import { StyleSheet } from "react-native";
+import { programs } from "@/src/data/programs";
+import { StyleSheet, View } from "react-native";
 import ProgramCard from "./ProgramCard";
 
 export default function ProgramList() {
   // Optional TODO: Sort programs by name before rendering by copying the programs array and sorting the copy
+
+  let sortedprograms;
+  sortedprograms = programs;
+
+  sortedprograms.sort((a, b) => a.name.localeCompare(b.name));
 
   // TODO: Write the tsx code to render a list of ProgramCard components
   // The root component should be a View for the list, and inside of the view we should map over the programs array
@@ -10,7 +16,11 @@ export default function ProgramList() {
   // Remember to set a key prop on each ProgramCard, using the program id (this allows React to track each component efficiently)
   return (
     <View style={styles.list}>
-      <ProgramCard>{"303"}</ProgramCard>
+      <ProgramCard program={sortedprograms[0]}></ProgramCard>
+      <ProgramCard program={sortedprograms[1]}></ProgramCard>
+      <ProgramCard program={sortedprograms[2]}></ProgramCard>
+      <ProgramCard program={sortedprograms[3]}></ProgramCard>
+      <ProgramCard program={sortedprograms[4]}></ProgramCard>
     </View>
   );
 }
