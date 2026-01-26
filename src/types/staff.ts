@@ -2,7 +2,7 @@ import { School } from "@/src/types/common";
 
 // TODO: Create a type for staff ids, which should be strings
 
-export type StaffIds = "0" | "1" | "2" | "3" | "4" | "5";
+export type StaffIds = 0 | 1 | 2 | 3 | 4 | 5;
 
 // TODO: Create a type for staff roles, which can be "Instructor", "Program Chair", "Coordinator", or "Advisor"
 
