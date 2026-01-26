@@ -47,6 +47,17 @@ export default function ProgramCard({ program }: Props) {
     );
   }
 
+  function OptionalRender(value: any) {
+    switch (value) {
+      case program.delivery:
+        return <Text> Delivery: {program.delivery} </Text>;
+      case program.careerpath:
+        return <Text>Careers: {program.careerpath} </Text>;
+      case program.note:
+        return <Text style={styles.note}>Note: {program.note} </Text>;
+    }
+  }
+
   // TODO: Create the TSX for the program card layout
   // There should be a Pressable as the root element, with onPress set to the logProgramInfo function created above
   // Inside the Pressable, create the following elements:
@@ -60,18 +71,17 @@ export default function ProgramCard({ program }: Props) {
   // If there is a note, a Text for the note
 
   return (
-    <Pressable onPress={LogProgramInfo}>
+    <Pressable style={styles.card} onPress={LogProgramInfo}>
       <View style={styles.topRow}>
         <Text style={styles.name}>{program.name}</Text>
         <Text style={styles.badge}>{program.credential}</Text>
         <View style={styles.meta}>
           <Text>{program.school}</Text>
-          <Text>
-            Length: {program.years}| Credits: {program.credits}| Delivery?:
-            {program.delivery}
-          </Text>
+          <Text> Length: {program.years} </Text>
+          <Text> Credits: {program.credits}</Text>
+          <Text> Delivery: {program.delivery} </Text>
         </View>
-        <Text>{program.delivery} </Text>
+        <Text>Careers: {program.careerpath} </Text>
         <Text style={styles.note}>Note: {program.note} </Text>
       </View>
     </Pressable>
