@@ -1,3 +1,5 @@
+import { School } from "@/src/types/common";
+
 // TODO: Create a type for staff ids, which should be strings
 
 export type StaffIds = "0" | "1" | "2" | "3" | "4" | "5";
@@ -23,9 +25,18 @@ export type StaffRoles =
 // an array of specialties
 // an optional fun fact
 
-e;
-
 // once all group members have completed their sections, add the following field:
 // an optional array of course ids that this staff member teaches
 
-export interface Staff {}
+export interface Staff {
+  id: StaffIds;
+  name: string;
+  role: StaffRoles;
+  school: School;
+  officeLocation?: string;
+  email?: string;
+  startYear?: string;
+  specialties: any[];
+  funFact?: string;
+  courseIds?: any[];
+}
