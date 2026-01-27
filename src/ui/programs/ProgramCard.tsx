@@ -79,10 +79,10 @@ export default function ProgramCard({ program }: Props) {
           <Text>{program.school}</Text>
           <Text> Length: {program.years} </Text>
           <Text> Credits: {program.credits}</Text>
-          <Text> Delivery: {program.delivery} </Text>
+          {program.delivery && <Text> Delivery: {program.delivery} </Text>}
         </View>
-        <Text>Careers: {program.careerpath} </Text>
-        <Text style={styles.note}>Note: {program.note} </Text>
+        {program.careerpath && <Text>Careers: {program.careerpath} </Text>}
+        {program.note && <Text style={styles.note}>Note: {program.note} </Text>}
       </View>
     </Pressable>
   );
