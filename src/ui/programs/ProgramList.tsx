@@ -16,11 +16,9 @@ export default function ProgramList() {
   // Remember to set a key prop on each ProgramCard, using the program id (this allows React to track each component efficiently)
   return (
     <View style={styles.list}>
-      <ProgramCard program={sortedprograms[0]}></ProgramCard>
-      <ProgramCard program={sortedprograms[1]}></ProgramCard>
-      <ProgramCard program={sortedprograms[2]}></ProgramCard>
-      <ProgramCard program={sortedprograms[3]}></ProgramCard>
-      <ProgramCard program={sortedprograms[4]}></ProgramCard>
+      {sortedprograms.map((res) => (
+        <ProgramCard program={res} key={res.id} />
+      ))}
     </View>
   );
 }
