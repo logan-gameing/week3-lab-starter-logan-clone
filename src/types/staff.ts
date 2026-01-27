@@ -38,5 +38,5 @@ export interface Staff {
   startYear?: string;
   specialties: any[];
   funFact?: string;
-  courseIds?: any[];
+  // courseIds?: any[];
 }
