@@ -11,12 +11,11 @@ type Props = { staff: Staff };
 
 // how to make optional text?
 
-function FunFact({ funfact }: any) {
-  return (
-    <Text style={styles.funFact}>
-      {funfact != null && funfact.trim() != "" && "Funfact: " + funfact}
-    </Text>
-  );
+function FunFact({ funfact }: { funfact: string | undefined }) {
+  if (funfact != undefined && funfact != "") {
+    return <Text style={styles.funFact}> Funfact: {funfact} </Text>;
+  }
+  return null;
 }
 
 export default function StaffCard({ staff }: Props) {
