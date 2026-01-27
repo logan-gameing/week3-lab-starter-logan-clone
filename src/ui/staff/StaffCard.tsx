@@ -1,14 +1,23 @@
 import { Staff } from "@/src/types/staff";
-import { StyleSheet } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 // TODO: Make a Props type for the props of our StaffCard component
 
 type Props = { staff: Staff };
-type FunFact = { staff: Staff.funFact };
 
 // TODO: Make a FunFact component that takes an optional text prop (no need for a type for this prop, just use inline typing)
 // This prop is a helper that will render null if no text is provided or if the text is an empty string (or only whitespace, use .trim() to check).
 // If there is text, render a Text component with the style styles.funFact that displays "Fun fact: " followed by the text prop.
+
+// how to make optional text?
+
+function FunFact({ funfact }: any) {
+  return (
+    <Text style={styles.funFact}>
+      {funfact != null && funfact.trim() != "" && "Funfact: " + funfact}
+    </Text>
+  );
+}
 
 export default function StaffCard({ staff }: Props) {
   // TODO: Use descructuring to extract values from the person
@@ -16,7 +25,17 @@ export default function StaffCard({ staff }: Props) {
   // you can do that directly in the tsx code below, or create new variables here
   // if the values will be used in the log function as well, create variables for them here
 
-  let stafflist: any[];
+  const {
+    id,
+    name,
+    role,
+    school,
+    email,
+    startyear,
+    specialties,
+    funfact,
+    // courseids,
+  } = staff;
 
   // TODO: Create a function called logStaffInfo that logs a formatted summary of the staff member to the console
   // Example output:
@@ -25,6 +44,19 @@ export default function StaffCard({ staff }: Props) {
   // Teaches: CPRG 101, CPRG 202 (once the field has been added)
   // Specialties: Web Development, Mobile Development, UI/UX Design
   // Fun fact: I once climbed Mount Everest.
+
+  function logStaffInfo() {
+    console.log(
+      "Staff: " + staff.name,
+      "| " + staff.role,
+      "| " + staff.school,
+      "| " + staff.email,
+      "| " + staff.startyear,
+      "| " + staff.specialties,
+      "| " + staff.funfact,
+      // "| " + staff.courseids,
+    );
+  }
 
   // TODO: Create the TSX for the staff card layout
   // There should be a Pressable as the root element, with onPress set to the logStaffInfo function created above
@@ -38,7 +70,21 @@ export default function StaffCard({ staff }: Props) {
   // A Text for the courses they teach (or "Teaches: N/A" if none are specified) (once that field has been added to the Staff interface)
   // A Text for the specialties (display only the first three specialties, separated by commas)
   // The FunFact component created above, passing in the fun fact text
-  return null;
+
+  return (
+    <Pressable style={styles.card}>
+      <View style={styles.topRow}>
+        <Text style={styles.name}>Name: {staff.name}</Text>
+        <Text style={styles.badge}>Role: {staff.role}</Text>
+      </View>
+      <Text>School: {staff.school}</Text>
+      <Text>Office: {staff.officelocation}</Text>
+      {staff.startyear && <Text>Start Year: {staff.startyear}</Text>}
+      {/* <Text>Teaches: {staff.courseids}</Text> */}
+      <Text>Specialties: {staff.specialties}</Text>
+      <FunFact funfact={staff.funfact} />
+    </Pressable>
+  );
 }
 
 const styles = StyleSheet.create({

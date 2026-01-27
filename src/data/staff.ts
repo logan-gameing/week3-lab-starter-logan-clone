@@ -35,6 +35,7 @@ export const staff: Staff[] = [
     school: "MacPhail School of Energy",
     officelocation: "Building D, Room 111",
     specialties: ["Energy Saving & Consumption"],
+    startyear: "January 3rd, 2001",
   },
   {
     id: 4,
@@ -43,5 +44,6 @@ export const staff: Staff[] = [
     school: "School of Health and Public Safety",
     officelocation: "Building A, Room 303",
     specialties: ["Health Care 101", "Safety 101"],
+    email: "keithwalts@healthandsafety.ca",
   },
 ];
