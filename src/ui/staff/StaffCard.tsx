@@ -1,16 +1,22 @@
+import { Staff } from "@/src/types/staff";
 import { StyleSheet } from "react-native";
 
 // TODO: Make a Props type for the props of our StaffCard component
+
+type Props = { staff: Staff };
+type FunFact = { staff: Staff.funFact };
 
 // TODO: Make a FunFact component that takes an optional text prop (no need for a type for this prop, just use inline typing)
 // This prop is a helper that will render null if no text is provided or if the text is an empty string (or only whitespace, use .trim() to check).
 // If there is text, render a Text component with the style styles.funFact that displays "Fun fact: " followed by the text prop.
 
-export default function StaffCard(/*TODO: Add props here (use desctructuring)*/) {
+export default function StaffCard({ staff }: Props) {
   // TODO: Use descructuring to extract values from the person
   // If values need to be modified or altered for display (ex: a default value added if no office is specified),
   // you can do that directly in the tsx code below, or create new variables here
   // if the values will be used in the log function as well, create variables for them here
+
+  let stafflist: any[];
 
   // TODO: Create a function called logStaffInfo that logs a formatted summary of the staff member to the console
   // Example output:

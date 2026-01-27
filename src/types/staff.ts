@@ -33,10 +33,10 @@ export interface Staff {
   name: string;
   role: StaffRoles;
   school: School;
-  officeLocation?: string;
+  officelocation?: string;
   email?: string;
-  startYear?: string;
+  startyear?: string;
   specialties: any[];
-  funFact?: string;
+  funfact?: string;
   // courseIds?: any[];
 }
