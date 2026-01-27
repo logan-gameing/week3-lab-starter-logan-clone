@@ -1,5 +1,5 @@
 import Section from "../components/Section";
-import ProgramList from "../programs/ProgramList";
+import StaffList from "../staff/StaffList";
 
 export default function StaffSection() {
   // TODO: Write the tsx code to render a Section component
@@ -9,7 +9,7 @@ export default function StaffSection() {
       title="Campus Staff"
       subtitle="Learn about our beloved campus staff"
     >
-      <ProgramList />
+      <StaffList />
     </Section>
   );
 }

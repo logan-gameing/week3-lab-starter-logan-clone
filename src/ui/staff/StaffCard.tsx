@@ -11,13 +11,13 @@ type Props = { staff: Staff };
 
 // how to make optional text?
 
-// function FunFact({ funfact }: any) {
-//   return (
-//     <Text style={styles.funFact}>
-//       {funfact != null && funfact.trim() != "" && "Funfact: " + funfact}
-//     </Text>
-//   );
-// }
+function FunFact({ funfact }: any) {
+  return (
+    <Text style={styles.funFact}>
+      {funfact != null && funfact.trim() != "" && "Funfact: " + funfact}
+    </Text>
+  );
+}
 
 export default function StaffCard({ staff }: Props) {
   // TODO: Use descructuring to extract values from the person
@@ -82,7 +82,7 @@ export default function StaffCard({ staff }: Props) {
       {staff.startyear && <Text>Start Year: {staff.startyear}</Text>}
       {/* <Text>Teaches: {staff.courseids}</Text> */}
       <Text>Specialties: {staff.specialties}</Text>
-      {/* <FunFact funfact={staff.funfact} /> */}
+      <FunFact funfact={staff.funfact} />
     </Pressable>
   );
 }
