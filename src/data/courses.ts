@@ -1,5 +1,56 @@
 import type { Course } from "../types/course";
 
 export const courses: Course[] = [
-  // add courses here
+  { 
+    id: "CPRG-101", 
+    code: "CPRG-101", 
+    title: "Introduction to Programming", 
+    desc: "Covers fundamental programming concepts including variables, control flow, functions, and basic data structures.", 
+    credits: 3, 
+    termNum: 1, 
+    delivery: "In-person", 
+    prereq: [], 
+  },
+  { 
+    id: "CPRG-102", 
+    code: "CPRG-102", 
+    title: "Web Development Basics", 
+    desc: "An introduction to HTML, CSS, and JavaScript for building simple web pages.", 
+    credits: 3, 
+    termNum: 1, 
+    delivery: "Online", 
+    prereq: ["CPRG-101"], 
+  },
+  { 
+    id: "CPRG-201", 
+    code: "CPRG-201", 
+    title: "Object-Oriented Programming", 
+    desc: "Explores OOP principles such as classes, inheritance, polymorphism, and interfaces.", 
+    credits: 4, 
+    termNum: 2, 
+    delivery: "Blended", 
+    prereq: ["CPRG-101"], 
+    note: "Students should be comfortable with basic programming concepts before enrolling.", 
+  },
+  { 
+    id: "CPRG-202", 
+    code: "CPRG-202", 
+    title: "Database Fundamentals", 
+    desc: "Covers relational database concepts, SQL queries, and basic data modeling.", 
+    credits: 3, 
+    termNum: 2, 
+    delivery: "In-person", 
+    prereq: ["CPRG-101"], 
+  },
+  { 
+    id: "CPRG-303", 
+    code: "CPRG-303", 
+    title: "Mobile Application Development", 
+    desc: "Focuses on building mobile apps using modern frameworks and TypeScript.", 
+    credits: 4, 
+    termNum: 3, 
+    delivery: "Blended", 
+    prereq: ["CPRG-201", "CPRG-202"], 
+    note: "Includes a major term project.", 
+  },
 ];
